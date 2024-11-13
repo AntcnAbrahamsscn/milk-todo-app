@@ -1,37 +1,103 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { Tabs } from "expo-router";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { Image, View } from "react-native";
+import { TasksProvider } from "@/context/TasksContext";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    return (
+        <TasksProvider>
+            <Tabs
+                screenOptions={{
+                    tabBarActiveTintColor: "white",
+                    tabBarStyle: {
+                        backgroundColor: "#242d32",
+                        padding: 10,
+                        borderTopWidth: 0,
+                        height: 60,
+                    },
+                    headerTitle: () => (
+                        <Image
+                            source={require("../../assets/images/milkit.png")}
+                            style={{
+                                width: 75,
+                                marginTop: 10,
+                                resizeMode: "contain",
+                            }}
+                        />
+                    ),
+                    headerStyle: {
+                        backgroundColor: "#324047",
+                        height: 100,
+                        borderBottomWidth: 0,
+                        shadowOpacity: 0,
+                        elevation: 0,
+                    },
+                    headerRight: () => (
+                        <View
+                            style={{
+                                width: 35,
+                                height: 35,
+                                borderRadius: 50,
+                                backgroundColor: "white", 
+                                marginRight: 15,
+                                marginTop: 10, 
+                            }}
+                        />
+                    ),
+                }}
+            >
+                <Tabs.Screen
+                    name="index"
+                    options={{
+                        headerShown: true,
+                        title: "Tasks",
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
-  );
+                        tabBarIcon: ({ color, focused }) => (
+                            <Ionicons
+                                name={focused ? "home-sharp" : "home-outline"}
+                                color={color}
+                                size={24}
+                            />
+                        ),
+                    }}
+                />
+                <Tabs.Screen
+                    name="StatsScreen"
+                    options={{
+                        headerShown: true,
+                        title: "Task stats",
+                        tabBarIcon: ({ color, focused }) => (
+                            <Ionicons
+                                name={
+                                    focused
+                                        ? "stats-chart"
+                                        : "stats-chart-outline"
+                                }
+                                color={color}
+                                size={24}
+                            />
+                        ),
+                    }}
+                />
+                <Tabs.Screen
+                    name="aboutScreen"
+                    options={{
+                        headerShown: true,
+                        title: "About",
+                        tabBarIcon: ({ color, focused }) => (
+                            <Ionicons
+                                name={
+                                    focused
+                                        ? "information-circle"
+                                        : "information-circle-outline"
+                                }
+                                color={color}
+                                size={24}
+                            />
+                        ),
+                    }}
+                />
+            </Tabs>
+        </TasksProvider>
+    );
 }
