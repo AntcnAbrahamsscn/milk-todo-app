@@ -14,7 +14,7 @@ export default function AddTodoItem() {
             setTasks((prevTasks) => [
                 ...prevTasks,
                 {
-                    id: Date.now().toString(),
+                    id: Date.now(),
                     task: inputText,
                     completed: false,
                 },
