@@ -1,12 +1,17 @@
 // TodoList.tsx
-import React from "react";
+import React, { useEffect } from "react";
 import { FlatList } from "react-native";
 import TodoItem from "./TodoItem";
-import { useTasksContext } from "@/context/TasksContext";
+import useStore from "@/store/store";
 
 
 export default function TodoList() {
-    const { tasks } = useTasksContext();
+    const { tasks, fetchAllTasks } = useStore();
+
+    useEffect(() => {
+        fetchAllTasks();
+    }, []);
+
 
     return (
         <FlatList

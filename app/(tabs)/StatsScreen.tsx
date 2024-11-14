@@ -1,9 +1,9 @@
-import { useTasksContext } from '@/context/TasksContext';
+import useStore from '@/store/store'
 import { StyleSheet, Text, View } from 'react-native'
 
 
 export default function StatsScreen() {
-  const { count } = useTasksContext();
+  const { count } = useStore();
 
   return (
     <View style={styles.container}>

@@ -1,11 +1,12 @@
 import React from 'react'
-import { FlatList } from 'react-native-gesture-handler'
+import { FlatList } from 'react-native'
 import TodoItem from './TodoItem';
-import { useTasksContext } from '@/context/TasksContext';
+import useStore from '@/store/store';
 
 export default function TodoListCompleted() {
-    const { tasks } = useTasksContext();
+    const { tasks } = useStore();
 
+    // TODO: Lägg till en annan färg när completed tasks renderar.
   return (
     <FlatList
     data={tasks.filter((item) => item.completed)}

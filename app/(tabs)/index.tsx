@@ -1,20 +1,24 @@
 // Index.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet, TextInput } from "react-native";
 import TodoList from "@/components/TodoList";
 import AddTodoItem from "@/components/AddTodoItem";
 import TodoListCompleted from "@/components/TodoListCompleted";
+import { ScrollView } from "react-native";
+
 
 export default function Index() {
+
+    
     return (
         <View style={styles.mainContainer}>
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 <Text style={styles.header}>Tasks</Text>
                 <TodoList  />
                 <Text style={styles.header}>Completed tasks</Text>
           {/* TODO: Enbart en komponent för båda och mata in props? */}
                 <TodoListCompleted />
-            </View>
+            </ScrollView>
             <AddTodoItem/>
         </View>
     );
@@ -22,7 +26,7 @@ export default function Index() {
 
 const styles = StyleSheet.create({
     header: { fontSize: 20, fontWeight: "bold", color: "white", marginTop: 20 },
-    container: {  padding: 15, backgroundColor: "#324047" },
+    container: {  padding: 15, backgroundColor: "#324047", marginBottom: 60 },
     mainContainer: {
         backgroundColor: "#324047",
         justifyContent: "space-between",

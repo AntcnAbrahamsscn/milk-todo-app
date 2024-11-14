@@ -1,11 +1,9 @@
 import { Tabs } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Image, View } from "react-native";
-import { TasksProvider } from "@/context/TasksContext";
 
 export default function TabLayout() {
     return (
-        <TasksProvider>
             <Tabs
                 screenOptions={{
                     tabBarActiveTintColor: "white",
@@ -54,7 +52,7 @@ export default function TabLayout() {
 
                         tabBarIcon: ({ color, focused }) => (
                             <Ionicons
-                                name={focused ? "home-sharp" : "home-outline"}
+                                name={focused ? "list" : "list-outline"}
                                 color={color}
                                 size={24}
                             />
@@ -98,6 +96,5 @@ export default function TabLayout() {
                     }}
                 />
             </Tabs>
-        </TasksProvider>
     );
 }
