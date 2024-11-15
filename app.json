@@ -3,8 +3,8 @@
     "name": "expo-todo-app",
     "slug": "expo-todo-app",
     "version": "1.0.0",
+    "icon": "./assets/images/milimg.png",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -17,19 +17,20 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/milimg.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
+      "output": "single",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       "expo-router",
       "expo-asset",
       "expo-font"
+      
     ],
     "experiments": {
       "typedRoutes": true

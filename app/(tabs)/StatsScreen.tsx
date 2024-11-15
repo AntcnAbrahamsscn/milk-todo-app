@@ -1,28 +1,35 @@
-import useStore from '@/store/store'
-import { StyleSheet, Text, View } from 'react-native'
-
+import useStore from "@/store/store";
+import { StyleSheet, Text, View } from "react-native";
+import TodoListCompleted from "@/components/TodoListCompleted";
 
 export default function StatsScreen() {
-  const { count } = useStore();
+    const { count } = useStore();
 
-  return (
-    <View style={styles.container}>
-      
-      <Text style={styles.text}>Stats Screen</Text>
-      <Text >{count}</Text>
-    </View>
-  )
+    return (
+        <View style={styles.statsScreen}>
+            <View style={styles.container}>
+                <Text style={styles.header}>Completed tasks</Text>
+                <TodoListCompleted />
+                <Text style={styles.header}>Weekly progress</Text>
+                <Text>{count}</Text>
+            </View>
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
+    statsScreen: {
+      height: '100%',
+      backgroundColor: "#324047"
+},
+    header: { fontSize: 20, fontWeight: "bold", color: "white", marginTop: 20 },
+
     container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#324047'
+        padding: 15,
+        backgroundColor: "#324047",
+        justifyContent: "flex-start",
     },
     text: {
-      color: '#fff',
+        color: "#fff",
     },
-  
-  });
+});

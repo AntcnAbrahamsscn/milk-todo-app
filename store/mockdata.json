@@ -1,8 +1,7 @@
 [
-    { "id": 1, "task": "Eat lunch", "completed": false },
-    { "id": 2, "task": "Do laundry", "completed": true },
-    { "id": 3, "task": "Learn context", "completed": false },
-    { "id": 4, "task": "Get better", "completed": true },
-    { "id": 5, "task": "Grow up", "completed": true },
-    { "id": 6, "task": "Have fun!", "completed": true }
+    { "id": 1, "task": "Understand how to use Theme", "completed": false },
+    { "id": 2, "task": "Implement and read about Safe Area", "completed": false },
+    { "id": 3, "task": "Read on Swipe and implement it!", "completed": false },
+    { "id": 4, "task": "Fix a version of FlatList", "completed": false },
+    { "id": 5, "task": "Install Google Fonts and use Poppins", "completed": false }
 ]

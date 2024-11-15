@@ -18,7 +18,7 @@ interface TasksContextProps {
 // Fetch
 export const fetchTasks = async (): Promise<ITodo[]> => {
     return new Promise((resolve) => {
-        setTimeout(() => resolve(mockdata), 1000);
+        setTimeout(() => resolve(mockdata), 3000);
     });
 };
 
@@ -36,6 +36,8 @@ const useStore = create<TasksContextProps>((set) => ({
         try {
             const tasks = await fetchTasks();
             set({ tasks });
+            console.log('Tasks are:', JSON.stringify(tasks, null, 2));
+            
         } finally {
             set({ loading: false });
         }

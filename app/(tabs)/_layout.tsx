@@ -17,7 +17,7 @@ export default function TabLayout() {
                         <Image
                             source={require("../../assets/images/milkit.png")}
                             style={{
-                                width: 75,
+                                width: 45,
                                 marginTop: 10,
                                 resizeMode: "contain",
                             }}
@@ -25,7 +25,7 @@ export default function TabLayout() {
                     ),
                     headerStyle: {
                         backgroundColor: "#324047",
-                        height: 100,
+                        height: 50,
                         borderBottomWidth: 0,
                         shadowOpacity: 0,
                         elevation: 0,
@@ -33,8 +33,8 @@ export default function TabLayout() {
                     headerRight: () => (
                         <View
                             style={{
-                                width: 35,
-                                height: 35,
+                                width: 25,
+                                height: 25,
                                 borderRadius: 50,
                                 backgroundColor: "white", 
                                 marginRight: 15,
